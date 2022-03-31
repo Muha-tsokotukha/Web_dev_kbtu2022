@@ -13,14 +13,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   selectCategory(id: any){
-    const categ = document.getElementById(id);
-    if(categ){
-      for(let i=0; i < this.categories.length; i++){
-        const category = document.getElementById(String(i));
-        if( category )category.classList.remove("active");
-      }
-      categ.classList.add("active");
-      this.service.selectCateg(id);
-    }
+    this.service.selectCateg(id);    
   }
 }

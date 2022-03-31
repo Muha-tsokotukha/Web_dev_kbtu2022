@@ -10,12 +10,15 @@ import { SenderService } from '../sender.service';
 export class ProductListComponent {
   products = products;
   categId = -1;
+  change = 'dfs';
   constructor(private service: SenderService){
     this.categId = service.ProdCategory;
   }
   getCategory(){
-    this.categId = this.service.getCateg();    
+    this.products = this.service.getProds();
+    this.change = "sdsdfsdfsdf";
   }
+
   deleteProd(id: number){
     console.log(id);
     this.products.forEach((element,index)=>{
